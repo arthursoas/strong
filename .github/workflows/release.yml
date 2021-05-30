@@ -13,15 +13,15 @@ jobs:
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
         git branch --remote --contains | grep origin/main
-    - name: Set VERSION variable from tag
+    - name: Set Version From Tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
-    - name: Build
+    - name: Build Solution
       run: dotnet build Strong/Strong.sln --configuration Release /p:Version=${VERSION}
-    - name: Test
+    - name: Run Solutions Tests
       run: dotnet test Strong/Strong.sln --configuration Release /p:Version=${VERSION} --no-build
-    - name: Pack
-      run: dotnet pack Strong/Strong.sln --configuration Release /p:Version=${VERSION} --no-build --output .
-    - name: Push
+    - name: Pack Strong Project
+      run: dotnet pack Strong/Strong/Strong.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+    - name: Push Package to NuGet.org
       run: dotnet nuget push Strong.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
       env:
         NUGET_ORG_KEY: ${{ secrets.NUGET_ORG_KEY }}
