@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Strong</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Arthur Soares</Authors>
+    <Description>Make your strings strongers. Strong is a series of helpful C# string extension methods that are not available natively on the language.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/arthursoas/strong</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Strings String Extension Casing</PackageTags>
+    <PackageReleaseNotes>Holding strong name</PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
