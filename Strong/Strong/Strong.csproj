@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,7 +12,14 @@
     <PackageTags>Strings String Extension Casing</PackageTags>
     <PackageReleaseNotes>Holding strong name</PackageReleaseNotes>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageIcon>https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/flexed-biceps_1f4aa.png</PackageIcon>
+    <PackageIcon>strong.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="strong.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
