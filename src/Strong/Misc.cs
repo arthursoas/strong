@@ -26,6 +26,13 @@ namespace Strong
             return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Remove the first occurence of a character.
+        /// If the character does not exists, return the string itself
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="remove">character to be removed</param>
+        /// <returns>String without the first occurence of character</returns>
         public static string RemoveFirstOcurrence(this string str, char remove)
         {
             if (remove == default) return str;
@@ -33,17 +40,19 @@ namespace Strong
             return str.RemoveFirstOcurrence(remove.ToString());
         }
 
+        /// <summary>
+        /// Remove the first occurence of a sub string.
+        /// If the sub string does not exists, return the string itself
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="remove">sub string to be removed</param>
+        /// <returns>String without the first occurence of sub string</returns>
         public static string RemoveFirstOcurrence(this string str, string remove)
         {
             if (remove == default) return str;
 
             var removingIndex = str.IndexOf(remove);
             return removingIndex == -1 ? str : str.Remove(removingIndex, remove.Length);
-        }
-
-        public static bool IsEmpty(this string str)
-        {
-            return str == null || str.SuperTrim() == "";
         }
     }
 }

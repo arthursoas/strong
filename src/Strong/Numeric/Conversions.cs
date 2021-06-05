@@ -37,7 +37,7 @@ namespace Strong.Numeric
                     2,
                     StringSplitOptions.RemoveEmptyEntries);
 
-            if (separator == null || str.EndsWith(separator))
+            if (separator.IsEmpty() || str.EndsWith(separator))
             {
                 str = "";
                 return CreateHundredSlice(slices.First());
