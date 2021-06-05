@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Strong.Numbers
+namespace Strong.Numeric
 {
     public static class Validations
     {

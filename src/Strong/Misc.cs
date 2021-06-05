@@ -19,11 +19,7 @@ namespace Strong
 
             for (var index = 0; index < chars.Length; index++)
             {
-                if (chars[index] == ' ' && chars[index + 1] == ' ')
-                {
-                    continue;
-                }
-
+                if (chars[index] == ' ' && chars[index + 1] == ' ') continue;
                 stringBuilder.Append(chars[index]);
             }
 
@@ -47,9 +43,7 @@ namespace Strong
 
         public static bool IsEmpty(this string str)
         {
-            return
-                str == null ||
-                str.SuperTrim() == "";
+            return str == null || str.SuperTrim() == "";
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Strong.Numbers;
+using Strong.Numeric;
 
-namespace Strong.Tests.Numbers
+namespace Strong.Tests.Numeric
 {
     [TestClass]
     public class ValidationsTests

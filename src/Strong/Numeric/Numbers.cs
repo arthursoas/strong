@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Strong.Numbers
+namespace Strong.Numeric
 {
     public static class Numbers
     {

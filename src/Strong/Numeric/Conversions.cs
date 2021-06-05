@@ -2,10 +2,15 @@
 using System.Linq;
 using System.Text;
 
-namespace Strong.Numbers
+namespace Strong.Numeric
 {
     public static class Conversions
     {
+        /// <summary>
+        /// Convert a number in written form to numeric form
+        /// </summary>
+        /// <param name="str">Number in written form</param>
+        /// <returns>Number in numeric form</returns>
         public static int FromWrittenNumberToInt(this string str)
         {
             str = NormalizeWrittenNumber(str);
