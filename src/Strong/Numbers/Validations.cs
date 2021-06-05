@@ -2,7 +2,7 @@
 
 namespace Strong.Numbers
 {
-    public static class Validating
+    public static class Validations
     {
         /// <summary>
         /// Validates if a string is a integer

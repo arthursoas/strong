@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Strong.Casing
 {
-    public static class Spliting
+    public static class Splitions
     {
         public static IEnumerable<string> SplitCamelCase(this string source)
         {

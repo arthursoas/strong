@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Strong.Json
 {
-    public static class Validating
+    public static class Validations
     {
         /// <summary>
         /// Validates if a string is a valid JSON or not

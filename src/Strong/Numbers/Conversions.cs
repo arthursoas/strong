@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Strong.Numbers
 {
-    public static class Converters
+    public static class Conversions
     {
-        public static long FromWrittenToInteger(this string str)
+        public static int FromWrittenNumberToInt(this string str)
         {
             str = NormalizeWrittenNumber(str);
 
@@ -18,7 +18,7 @@ namespace Strong.Numbers
             numberBuilder.Append(CreateSlice("thousand", ref str));
             numberBuilder.Append(CreateSlice(null, ref str));
 
-            return long.Parse(numberBuilder.ToString());
+            return int.Parse(numberBuilder.ToString());
         }
 
         private static string CreateSlice(string separator, ref string str)

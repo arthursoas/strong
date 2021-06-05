@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Strong.Casing
 {
-    public static class Converting
+    public static class Conversions
     {
         /// <summary>
         /// Converts a string in snake_case to a string in camelCase
