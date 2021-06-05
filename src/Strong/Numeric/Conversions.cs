@@ -19,21 +19,21 @@ namespace Strong.Numeric
             var isNegative = str.StartsWith(NEGATIVE_KEYWORD);
             str = str.RemoveFirstOcurrence(NEGATIVE_KEYWORD);
 
-            var numberBuilder = 0;
+            var accumulator = 0;
 
             foreach (var multiplier in Numbers.WrittenNumberMultipliers)
             {
                 if (str.Contains(multiplier.Key))
                 {
                     var tokens = str.Split(multiplier.Key, 2, StringSplitOptions.RemoveEmptyEntries);
-                    numberBuilder += ConvertSlice(tokens.First()) * multiplier.Value;
+                    accumulator += ConvertSlice(tokens.First()) * multiplier.Value;
                     str = tokens.Length > 1 ? tokens.Last() : "";
                 }
             }
 
-            numberBuilder += ConvertSlice(str);
+            accumulator += ConvertSlice(str);
 
-            return isNegative ? -numberBuilder : numberBuilder;
+            return isNegative ? -accumulator : accumulator;
         }
 
         private static int ConvertSlice(string slice)
