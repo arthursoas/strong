@@ -9,6 +9,8 @@ namespace Strong.Numbers
         public static int FromWrittenNumberToInt(this string str)
         {
             str = NormalizeWrittenNumber(str);
+            var multiplier = str.StartsWith("negative") ? -1 : 1;
+            str = str.RemoveFirstOcurrence("negative");
 
             var numberBuilder = new StringBuilder();
 
@@ -18,7 +20,7 @@ namespace Strong.Numbers
             numberBuilder.Append(CreateSlice("thousand", ref str));
             numberBuilder.Append(CreateSlice(null, ref str));
 
-            return int.Parse(numberBuilder.ToString());
+            return int.Parse(numberBuilder.ToString()) * multiplier;
         }
 
         private static string CreateSlice(string separator, ref string str)
