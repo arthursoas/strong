@@ -16,11 +16,11 @@ jobs:
     - name: Set Version From Tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
     - name: Build Solution
-      run: dotnet build Strong/Strong.sln --configuration Release /p:Version=${VERSION}
+      run: dotnet build src/Strong.sln --configuration Release /p:Version=${VERSION}
     - name: Run Solutions Tests
-      run: dotnet test Strong/Strong.sln --configuration Release /p:Version=${VERSION} --no-build
+      run: dotnet test src/Strong.sln --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack Strong Project
-      run: dotnet pack Strong/Strong/Strong.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack src/Strong/Strong.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push Package to NuGet.org
       run: dotnet nuget push Strong.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
       env:
