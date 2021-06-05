@@ -1,10 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Strong.Casing;
 
-namespace Strong.Tests
+namespace Strong.Tests.Casing
 {
     [TestClass]
-    public class CasingTests
+    public class ConversionsTests
     {
         [DataTestMethod]
         [DataRow("some_string", "someString")]

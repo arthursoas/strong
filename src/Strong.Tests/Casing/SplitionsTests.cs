@@ -1,11 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Strong.Casing;
 using System.Linq;
 
-namespace Strong.Tests
+namespace Strong.Tests.Casing
 {
     [TestClass]
-    public class SplittingTests
+    public class SplitionsTests
     {
         [DataTestMethod]
         [DataRow(new string[] { "some", "string" }, "someString")]
