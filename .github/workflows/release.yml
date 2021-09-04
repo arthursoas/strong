@@ -26,6 +26,8 @@ jobs:
       run: dotnet pack src/Strong.Numeric/Strong.Numeric.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push Strong Text Package to NuGet.org
       run: dotnet nuget push Strong.Text.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
+      env:
+        NUGET_ORG_KEY: ${{ secrets.NUGET_ORG_KEY }}
     - name: Push Strong Numeric Package to NuGet.org
       run: dotnet nuget push Strong.Text.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
       env:
