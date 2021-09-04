@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Strong.Text</PackageId>
+    <Version>0.0.2</Version>
+    <Authors>Arthur Soares</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/arthursoas/strong</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Strings String Extension Casing</PackageTags>
+    <PackageReleaseNotes>Holding strong name</PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageIcon>strong.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\strong.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+
+</Project>
