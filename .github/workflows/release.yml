@@ -20,9 +20,13 @@ jobs:
       run: dotnet build src/Strong.sln --configuration Release /p:Version=${VERSION}
     - name: Run Solutions Tests
       run: dotnet test src/Strong.sln --configuration Release /p:Version=${VERSION} --no-build
-    - name: Pack Strong Project
-      run: dotnet pack src/Strong/Strong.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
-    - name: Push Package to NuGet.org
-      run: dotnet nuget push Strong.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
+    - name: Pack Strong Text Project
+      run: dotnet pack src/Strong/Strong.Text.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+    - name: Pack Strong Numeric Project
+      run: dotnet pack src/Strong/Strong.Numeric.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+    - name: Push Strong Text Package to NuGet.org
+      run: dotnet nuget push Strong.Text.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
+    - name: Push Strong Numeric Package to NuGet.org
+      run: dotnet nuget push Strong.Text.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_ORG_KEY}
       env:
         NUGET_ORG_KEY: ${{ secrets.NUGET_ORG_KEY }}
